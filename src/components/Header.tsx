@@ -24,7 +24,7 @@ const Liens:FC<LiensProps> = ({
 }) => {
     return <span className={
               type === "desktop" ?`relative after:absolute after:w-0 after:h-[2px] after:left-0 after:bottom-[-2px] after:duration-300 after:bg-bambooGreen hover:after:w-full hover:text-textHoverHeader` :
-                                  `hover:underline hover:text-textHoverHeader border-b py-2 hover:bg-header/80`
+                                  `hover:underline hover:text-textHoverHeader border-b border-[#444444] my-2 hover:bg-header/80`
 
             }>
                 <Link href={link} id="pathname" data-translate="home" translate="no">{name}</Link>
@@ -45,7 +45,21 @@ const Header = () => {
     const language = useLanguage()
     const [hidden, setHidden] = useState(true)
     return <section className="relative w-full bg-header bg-[url('/Grid.svg')]" id="header">
-    <header className="w-full flex items-center justify-between px-4 lg:px-16 py-4">
+      <section className="w-full top-0 bg-header z-50 text-white duration-300 p-4" style={{
+          transform: hidden ? "translate(0, -1000px)" : "translate(0, 0)",
+          position: hidden ? "absolute" : 'sticky'
+        }}>
+        <div className="flex items-center justify-between">
+          <Image src="bamboo.svg" width="80" height="80" alt="logo"/>
+          <Image src="close.svg" alt="close" width="20" height="20" onClick={() => setHidden(true)} />
+        </div>
+        <div className="flex flex-col mt-4 space-y-4 text-lg">
+          {HEADER[language.language].nav.map((item: any, index) => (
+            <Liens key={index} name={item.text} link={`#${item.link}`} type="mobile"/>
+          ))}
+        </div>
+      </section>
+    <header className={hidden ? `w-full flex items-center justify-between px-4 lg:px-16 py-4` : "hidden"}>
       <div className="">
         <Image src="bamboo.svg" width="80" height="80" alt="logo" />
     </div>
@@ -55,26 +69,13 @@ const Header = () => {
         ))}
     </div>
     <div className={`${podkova.className} py-2 px-5 -skew-x-6 font-bold rounded-lg bg-bambooGreen flex items-center justify-center cursor-pointer max-lg:hidden duration-500 hover:bg-white`}>
-        <p>{HEADER[language.language].btn2}</p>
+        <p translate="no">{HEADER[language.language].btn2}</p>
     </div>
     <div className="lg:hidden">
       <Image src="menu.svg" alt="menu" width="30" height="30" onClick={() => setHidden(false)} className="cursor-pointer" id="menu" />
     </div>
     </header>
     <section className="2xl:w-[1500px] 2xl:m-auto h-[800px] relative">
-      <section className="fixed top-0 left-0 right-0 bg-header z-50 text-white duration-300" style={{
-          transform: hidden ? "translate(0, -1000px)" : "translate(0, 0)"
-        }}>
-        <div className="w-full flex items-center justify-between px-4">
-          <Image src="bamboo.svg" width="80" height="80" alt="logo" />
-          <Image src="close.svg" alt="close" width="20" height="20" id="close" onClick={() => setHidden(true)} className="cursor-pointer" />
-        </div>
-        <div className="flex flex-col mt-4 space-y-4 text-lg px-4">
-          {HEADER[language.language].nav.map((item: any, index) => (
-            <Liens key={index} name={item.text} link={`#${item.link}`} type="desktop"/>
-          ))}
-        </div>
-      </section>
       <section id="" className="w-full h-[800px] overflow-hidden after:absolute after:skew-y-1 after:-bottom-8 after:h-[45px] after:w-full after:bg-bambooGreen">
         <section className="relative h-auto lg:pt-24">
           <div className="w-full space-y-10 lg:w-1/2  lg:pl-16 lg:space-y-16 max-lg:m-auto max-sm:mt-8">

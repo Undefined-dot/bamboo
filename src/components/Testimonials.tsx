@@ -23,7 +23,7 @@ const Testimonials = () => {
 
             <p className="font-bold max-lg:text-3xl max-xs:text-base">{TESTIMONIALS[language].title}</p>
           </div>
-          <div className="w-[50%] max-md:w-[80%] m-auto"><p className="text-center text-textServices text-sm mt-4 font-[400]">{TESTIMONIALS[language].subTitle}</p></div>
+          <div className="w-[50%] max-md:w-[80%] m-auto"><p className="text-center text-textServices text-sm mt-4 font-[400]" translate="no">{TESTIMONIALS[language].subTitle}</p></div>
         </Reveal>
 
         <div className="w-full rounded-2xl p-6">
@@ -41,7 +41,7 @@ const Testimonials = () => {
                             <p className="font-light">{TESTIMONIALS[language].occupation}</p>
                           </div>
                         </div>
-                        <p className="italic font-light mt-4 ml-6">{TESTIMONIALS[language].testimonials}</p>
+                        <p className="italic font-light mt-4 ml-6" translate="no">{TESTIMONIALS[language].testimonials}</p>
                       </div>
                     ))}
                 </SimpleSlider>

@@ -25,7 +25,7 @@ const Teamcard:FC<teamCardProps> = ({
         <p className="text-teamtext">{number}</p>
         <div style={{ backgroundImage: `url('/${img}')` }} className={`bg-[#DDDDDD] bg-cover bg-no-repeat h-[320px] rounded-2xl`}></div>
         <h1 className="text-white">{name}</h1>
-        <p className="text-sm text-white">{text}</p>
+        <p className="text-sm text-white" translate="no">{text}</p>
       </div>
     </div>
 }

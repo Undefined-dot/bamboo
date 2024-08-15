@@ -65,7 +65,7 @@ export default function SimpleSlider({children}: {children: React.ReactNode}) {
             alignItems: 'center',
             justifyContent: 'center',
             cursor: 'pointer',
-            background: "white"
+            background: "#333333"
           }}
         >
         </div>

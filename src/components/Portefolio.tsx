@@ -7,9 +7,6 @@ import { PORTEFOLIO } from "@/constant/translation"
 import { Reveal } from "./Reveal"
 
 
-
-
-
 const Portefolio = () => {
 
     const {language} = useLanguage()
@@ -32,7 +29,7 @@ const Portefolio = () => {
     <div id="half-black-half-white" className="relative py-8 after:absolute after:-skew-y-1 after:-bottom-5 after:h-[45px] after:w-full after:bg-header">
       <Reveal width="100%">
       <div className="relative">
-        <div className="px-12">
+        <div className="sm:px-12">
           <SimpleSlider>
             {[...Array(10)].map((_, index) => (
               <div id="carousselChild" key={index} className="h-[350px] max-w-[500px] bg-[#DDDDDD] text-white rounded-2xl text-5xl">0{index}</div>
@@ -56,7 +53,7 @@ const Portefolio = () => {
       </Reveal>
       <Reveal width="100%">
         <div className="max-md:w-[80%] w-1/2 m-auto">
-          <p className="text-center text-sm text-textServices"> {PORTEFOLIO[language].text}</p>
+          <p className="text-center text-sm text-textServices" translate="no"> {PORTEFOLIO[language].text}</p>
         </div>
       </Reveal>
     </div>

@@ -21,14 +21,14 @@ const Arrow = ({color , show}: {color: string, show: boolean}) => {
 
 const StartedCard = ({text, text2, hideText}: {text: string, text2: string, hideText: string}) => {
     const [ show, setShow ] = useState(false)
-    return <div onClick={() =>  {show === false ? setShow(true) : setShow(false)}} className={!show ? "w-[90%] border border-[#DDDDDD] rounded-[40px] mb-12 mt-4 p-6 cursor-pointer duration-500" : "w-[90%] text-white border-none bg-header rounded-[10px] mt-4 mb-12 p-6 cursor-pointer duration-500"}>
+    return <div onClick={() =>  {show === false ? setShow(true) : setShow(false)}} className={!show ? "max-md:w-full w-[90%] border border-[#DDDDDD] rounded-[40px] mb-12 mt-4 m-auto p-6 cursor-pointer duration-500" : "max-md:w-full w-[90%] text-white m-auto border-none bg-header rounded-[10px] mt-4 mb-12 p-6 cursor-pointer duration-500"}>
             <div className="flex items-center justify-between">
-                <div className={`${podkova.className}`}>{text}</div>
-                <div className="w-[75%]"><h1>{text2}<p className="inline" translate="no"></p></h1></div>
+                <div className={`${podkova.className}`} translate="no">{text}</div>
+                <div className="w-[75%]"><h1 translate="no">{text2}<p className="inline" translate="no"></p></h1></div>
                 <div className=""><Arrow color={show ? "white" : "black"} show={show} /></div>
             </div>
             <div className={show ? "block text-white" : "hidden"}>
-                <p className="text-sm mt-4">{hideText}</p>
+                <p className="text-sm mt-4" translate="no">{hideText}</p>
             </div>
         </div>
 }
@@ -38,15 +38,15 @@ const Started = () => {
     return <section id="Q & A" className="2xl:w-[1080px] 2xl:mx-auto relative mt-28 lg:mb-32">
         <div className="w-32 py-2 absolute -left-12 top-[30%] flex items-center justify-center bg-bambooGreen -rotate-90 text-textHeader max-lg:hidden">Q & A</div>
         <div className="flex items-center justify-between">
-        <div className="w-1/2 pl-16 text-textColor space-y-8 max-lg:w-full">
+        <div className="w-1/2 lg:pl-16 text-textColor space-y-8 max-lg:w-full">
         <Reveal width="100%">
-            <div className={`${podkova.className} w-auto flex items-center justify-start text-4xl text-textColor font-[Podkova] font-semibold`}>
+            <div className={`${podkova.className} w-auto max-lg:m-auto flex items-center justify-start max-lg:justify-center text-4xl text-textColor font-[Podkova] font-semibold`}>
                 <p className="font-bold max-lg:text-3xl max-xs:text-base" translate="no">{STARTED[language].title}</p>
                 <div className="p-1 -skew-x-6 rounded-lg bg-bambooGreen flex items-center justify-center ml-2 cursor-pointer">
-                  <p className="max-lg:text-3xl max-xs:text-base font-bold">{STARTED[language].titleSpecial}</p>
+                  <p className="max-lg:text-3xl max-xs:text-base font-bold" translate="no">{STARTED[language].titleSpecial}</p>
                 </div>
             </div>
-            <p className="text-textColor max-xs:text-sm mt-4">{STARTED[language].subTitle}</p>
+            <p className="text-textColor max-lg:text-center max-xs:text-sm mt-4" translate="no">{STARTED[language].subTitle}</p>
         </Reveal>
         <Reveal width="100%">
             <StartedCard 
