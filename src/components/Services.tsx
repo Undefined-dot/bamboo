@@ -3,6 +3,7 @@ import Image from "next/image"
 import { podkova } from "@/app/polices"
 import { SERVICES } from "@/constant/translation"
 import { useLanguage } from "@/hook/useLanguage"
+import { Reveal } from "./Reveal"
 
 
 const Servicescard = ({name} : {name: string}) => {
@@ -28,12 +29,16 @@ const Services = () => {
 
     return <div id="Services" className="relative my-28 2xl:w-[1080px] 2xl:mx-auto">
     <div className="w-32 py-2 absolute -left-12 top-[50%] flex items-center justify-center bg-bambooGreen -rotate-90 text-textHeader max-lg:hidden" translate="no">SERVICES</div>
-    <h1 className={`${podkova.className} text-7xl text-textHeader text-center font-bold mb-16 max-sm:text-4xl duration-500`}>{SERVICES[language].title}</h1>
-    <div className="max-lg:w-full lg:grid lg:grid-cols-3 lg:gap-28 lg:px-28 max-lg:space-y-4 px-4">
-            {SERVICES[language].card.map((item) => (
-                <Servicescard name={item} />
+    <Reveal width="100%">
+        <h1 className={`${podkova.className} text-7xl text-textHeader text-center font-bold mb-16 max-sm:text-4xl duration-500`}>{SERVICES[language].title}</h1>
+    </Reveal>
+    <Reveal width="100%">
+        <div className="max-lg:w-full lg:grid lg:grid-cols-3 lg:gap-20 lg:px-28 max-lg:space-y-4 px-4">
+            {SERVICES[language].card.map((item, index) => (
+                <Servicescard key={index} name={item} />
             ))}
-     </div>
+        </div>
+    </Reveal>
   </div>
 }
 

@@ -4,6 +4,7 @@ import { podkova } from "@/app/polices"
 import { useState } from "react"
 import { useLanguage } from "@/hook/useLanguage"
 import { STARTED } from "@/constant/translation"
+import { Reveal } from "./Reveal"
 
 const Arrow = ({color , show}: {color: string, show: boolean}) => {
     return <svg style={show ? {
@@ -20,8 +21,7 @@ const Arrow = ({color , show}: {color: string, show: boolean}) => {
 
 const StartedCard = ({text, text2, hideText}: {text: string, text2: string, hideText: string}) => {
     const [ show, setShow ] = useState(false)
-    console.log(show)
-    return <div onClick={() =>  {show === false ? setShow(true) : setShow(false)}} className={!show ? "w-[75%] border border-[#DDDDDD] rounded-[40px] mb-2 p-3 cursor-pointer duration-500" : "w-[75%] text-white border-none bg-header rounded-[10px] mb-2 p-3 cursor-pointer duration-500"}>
+    return <div onClick={() =>  {show === false ? setShow(true) : setShow(false)}} className={!show ? "w-[90%] border border-[#DDDDDD] rounded-[40px] mb-12 mt-4 p-6 cursor-pointer duration-500" : "w-[90%] text-white border-none bg-header rounded-[10px] mt-4 mb-12 p-6 cursor-pointer duration-500"}>
             <div className="flex items-center justify-between">
                 <div className={`${podkova.className}`}>{text}</div>
                 <div className="w-[75%]"><h1>{text2}<p className="inline" translate="no"></p></h1></div>
@@ -35,17 +35,20 @@ const StartedCard = ({text, text2, hideText}: {text: string, text2: string, hide
 
 const Started = () => {
     const {language} = useLanguage()
-    return <section id="Q & A" className="2xl:w-[1080px] 2xl:mx-auto relative mt-28 mb-48">
+    return <section id="Q & A" className="2xl:w-[1080px] 2xl:mx-auto relative mt-28 lg:mb-32">
         <div className="w-32 py-2 absolute -left-12 top-[30%] flex items-center justify-center bg-bambooGreen -rotate-90 text-textHeader max-lg:hidden">Q & A</div>
         <div className="flex items-center justify-between">
-        <div className="w-1/2 pl-16 text-textColor space-y-8 max-md:w-full">
+        <div className="w-1/2 pl-16 text-textColor space-y-8 max-lg:w-full">
+        <Reveal width="100%">
             <div className={`${podkova.className} w-auto flex items-center justify-start text-4xl text-textColor font-[Podkova] font-semibold`}>
                 <p className="font-bold max-lg:text-3xl max-xs:text-base" translate="no">{STARTED[language].title}</p>
                 <div className="p-1 -skew-x-6 rounded-lg bg-bambooGreen flex items-center justify-center ml-2 cursor-pointer">
                   <p className="max-lg:text-3xl max-xs:text-base font-bold">{STARTED[language].titleSpecial}</p>
                 </div>
             </div>
-            <p className="text-textColor max-xs:text-sm">{STARTED[language].subTitle}</p>
+            <p className="text-textColor max-xs:text-sm mt-4">{STARTED[language].subTitle}</p>
+        </Reveal>
+        <Reveal width="100%">
             <StartedCard 
                 text="01" 
                 text2={STARTED[language].text}
@@ -61,9 +64,12 @@ const Started = () => {
                 text2={STARTED[language].text}
                 hideText="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae rerum atque, aut vitae asperiores modi numquam rem accusantium tempora provident ad repellat dolor voluptas sint quos ab ipsa quibusdam sequi."
             />
-            <div className="w-[45%] absolute top-0 right-0 max-md:hidden">
-                <Image src="man.svg" alt="man" width={800} height={800}/>
-            </div>
+        </Reveal>
+        <div className="w-[45%] absolute top-0 right-0 max-lg:hidden">
+            <Reveal width="100%">
+                <Image src="man.svg" alt="man" width={500} height={500}/>
+            </Reveal>
+        </div>
         </div>
         </div>
     </section>

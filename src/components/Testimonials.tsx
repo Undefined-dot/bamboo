@@ -4,6 +4,7 @@ import { podkova } from "@/app/polices"
 import SimpleSlider from "./caroussel"
 import { useLanguage } from "@/hook/useLanguage"
 import { TESTIMONIALS } from "@/constant/translation"
+import { Reveal } from "./Reveal"
 
 const Testimonials = () => {
 
@@ -13,24 +14,26 @@ const Testimonials = () => {
     after:absolute after:-skew-y-1 after:-bottom-5 after:h-[45px] max-xs:-bottom-10 after:w-full after:bg-bambooGreen
     before:absolute before:-skew-y-1 before:-top-5 before:h-[45px] before:w-full before:bg-bambooGreen
 ">
-            <div className="w-32 py-2 absolute -left-12 top-[30%] flex items-center justify-center bg-[#DDDDDD] -rotate-90 text-textHeader max-lg:hidden">TESTIMONIALS</div>
-            <div className={`${podkova.className} w-full flex items-center justify-center text-4xl text-white font-[Podkova] font-semibold`}>
+        <div className="w-32 py-2 absolute -left-12 top-[30%] flex items-center justify-center bg-[#DDDDDD] -rotate-90 text-textHeader max-lg:hidden">TESTIMONIALS</div>
+        <Reveal width="100%">
+          <div className={`${podkova.className} w-full flex items-center justify-center text-4xl text-white font-[Podkova] font-semibold`}>
             <div className="p-1 -skew-x-6 rounded-lg bg-bambooGreen flex items-center justify-center mr-2 cursor-pointer">
-            <p className="text-textHeader max-lg:text-3xl max-xs:text-base">{TESTIMONIALS[language].titleSpecial}</p>
+              <p className="text-textHeader max-lg:text-3xl max-xs:text-base">{TESTIMONIALS[language].titleSpecial}</p>
             </div>
 
             <p className="font-bold max-lg:text-3xl max-xs:text-base">{TESTIMONIALS[language].title}</p>
-            </div>
+          </div>
+          <div className="w-[50%] max-md:w-[80%] m-auto"><p className="text-center text-textServices text-sm mt-4 font-[400]">{TESTIMONIALS[language].subTitle}</p></div>
+        </Reveal>
 
-            <div className="w-[50%] max-md:w-[80%] m-auto"><p className="text-center text-textServices text-sm font-[400]">{TESTIMONIALS[language].subTitle}</p></div>
-
-            <div className="w-full rounded-2xl p-6">
-                <Image src="star.svg" alt="start" className="absolute top-[10%] right-[10%] max-lg:hidden" width={30} height={30}/>
-                <Image src="star.svg" alt="start" className="absolute left-[15%] top-28 max-lg:hidden" width={30} height={30}/>
+        <div className="w-full rounded-2xl p-6">
+            <Image src="star.svg" alt="start" className="absolute top-[10%] right-[10%] max-lg:hidden" width={30} height={30}/>
+            <Image src="star.svg" alt="start" className="absolute left-[15%] top-28 max-lg:hidden" width={30} height={30}/>
+            <Reveal width="100%">
             <div id="caroussel2">
                 <SimpleSlider>
                     {[...Array(10)].map((_, index) => (
-                        <div className="text-white ">
+                        <div key={index} className="text-white ">
                         <div className="flex items-center">
                           <div className="w-[50px] h-[50px] rounded-full bg-[#DDDDDD] mr-2"></div>
                           <div className="flex flex-col gap-2">
@@ -43,6 +46,7 @@ const Testimonials = () => {
                     ))}
                 </SimpleSlider>
             </div>
+            </Reveal>
             </div>
             </section>
 }
