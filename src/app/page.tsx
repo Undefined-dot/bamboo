@@ -8,7 +8,8 @@ import OtherPart from "@/components/OtherPart";
 import Footer from "@/components/Footer";
 
 export default function Home() {
-  return <section>
+
+  return <section className="bg-[#F6F6F6]">
     <Header />
     <Services />
     <Team />

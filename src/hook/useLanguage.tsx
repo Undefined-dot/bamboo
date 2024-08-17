@@ -7,7 +7,6 @@ export const useLanguage = () => {
     function getBrowserLanguage() {
         const lang = navigator.language;
         const navLang = lang.split('-')[0]
-        console.log(navLang)
         if (navLang === "en" || navLang === "fr") {
             setLanguage(navLang) 
             return navLang
