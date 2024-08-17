@@ -27,7 +27,7 @@ const Portefolio = () => {
         <div className="px-12">
           <SimpleSlider>
             {[...Array(10)].map((_, index) => (
-              <div id="carousselChild" className="h-[350px] max-w-[500px] bg-[#DDDDDD] text-white rounded-2xl text-5xl">0{index}</div>
+              <div key={index} id="carousselChild" className="h-[350px] max-w-[500px] bg-[#DDDDDD] text-white rounded-2xl text-5xl">0{index}</div>
             ))}
           </SimpleSlider>
         </div>

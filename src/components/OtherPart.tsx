@@ -16,7 +16,7 @@ const OtherPart = () => {
             <div className="w-[41%] h-2 bg-header pt-1"></div>
         </section><section id="orther" className="2xl:w-[1080px] 2xl:mx-auto my-20">
             <div className="w-[60%] max-md:w-[80%] m-auto mb-10">
-                <p className="text-center max-xs:text-sm text-textColor">Finding the right talent for your business can be a daunting task. Let Catalyst Studio's hiring agency take the guesswork out of the process and help you find the perfect fit for your team</p>
+                <p className="text-center max-xs:text-sm text-textColor">Finding the right talent for your business can be a daunting task. Let Catalyst Studio&lsquo;s hiring agency take the guesswork out of the process and help you find the perfect fit for your team</p>
             </div>
             <div className="w-[80%] m-auto flex gap-8 max-md:gap-4 justify-center">
                 <button className="border-2 border-textHeader bg-header text-white py-3 px-16 max-md:px-12 max-md:py-1 max-xs:text-sm rounded-3xl duration-500 hover:bg-[#F6F6F6]  hover:text-textHeader">Hire Us</button>

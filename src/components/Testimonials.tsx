@@ -28,7 +28,7 @@ const Testimonials = () => {
             <div id="caroussel2">
                 <SimpleSlider>
                     {[...Array(10)].map((_, index) => (
-                        <div className="text-white ">
+                        <div key={index} className="text-white ">
                         <div className="flex items-center">
                           <div className="w-[50px] h-[50px] rounded-full bg-[#DDDDDD] mr-2"></div>
                           <div className="flex flex-col gap-2">
@@ -36,7 +36,7 @@ const Testimonials = () => {
                             <p className="font-light">CEO of Redbird Company</p>
                           </div>
                         </div>
-                        <p className="italic font-light mt-4 ml-6">Working with Katalyst Studio has been an incredible experience. They truly listened to our needs and delivered a stunning design that exceeded our expectations. We couldn't be happier with the final product!</p>
+                        <p className="italic font-light mt-4 ml-6">Working with Katalyst Studio has been an incredible experience. They truly listened to our needs and delivered a stunning design that exceeded our expectations. We couldn&lsquo;t be happier with the final product!</p>
                       </div>
                     ))}
                 </SimpleSlider>
