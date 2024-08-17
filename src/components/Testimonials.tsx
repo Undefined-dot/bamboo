@@ -42,8 +42,6 @@ const Testimonials = () => {
                           </div>
                         </div>
 
-                        <p className="italic font-light mt-4 ml-6">Working with Katalyst Studio has been an incredible experience. They truly listened to our needs and delivered a stunning design that exceeded our expectations. We couldn&lsquo;t be happier with the final product!</p>
-
                         <p className="italic font-light mt-4 ml-6" translate="no">{TESTIMONIALS[language].testimonials}</p>
 
                       </div>

@@ -30,8 +30,6 @@ const OtherPart = () => {
         <Reveal width="100%">
             <div className="w-[60%] max-md:w-[80%] m-auto mb-10">
 
-                <p className="text-center max-xs:text-sm text-textColor">Finding the right talent for your business can be a daunting task. Let Catalyst Studio&lsquo;s hiring agency take the guesswork out of the process and help you find the perfect fit for your team</p>
-
                 <p className="text-center max-xs:text-sm text-textColor" translate="no">{OTHER[language].text}</p>
 
             </div>
